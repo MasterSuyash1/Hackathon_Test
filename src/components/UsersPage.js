@@ -1,8 +1,7 @@
-// src/components/UsersPage.js
 import React from 'react';
 import "../../src/UsersPage.css"; // Separate CSS file for UsersPage styling
 
-const UsersPage = () => {
+const UsersPage = ({ onAddFriend }) => {
   // Dummy users list
   const users = [
     { id: 1, name: 'Alice', wallet: '0x1234...abcd' },
@@ -18,6 +17,7 @@ const UsersPage = () => {
           <li key={user.id} className="user-item">
             <p>{user.name}</p>
             <p>{user.wallet}</p>
+            <button onClick={() => onAddFriend(user)}>Add Friend</button>
           </li>
         ))}
       </ul>
