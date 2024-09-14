@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import UsersPage from './components/UsersPage';
-import FriendPage from './components/FriendPage';
+import FriendsList from './components/FriendsList'; // Import FriendsList component
 import ChatPage from './components/ChatPage';
 import Footer from './components/Footer';
 import './App.css'; // Include your CSS file for styling
@@ -33,10 +33,10 @@ function App() {
         <UsersPage />
       </section>
       <section id="friend">
-        {walletAddress ? <FriendPage /> : <p>Please connect your wallet to see your friends.</p>}
+        {walletAddress ? <FriendsList /> : <p>Please connect your wallet to see your friends.</p>}
       </section>
       <section id="chat">
-        <ChatPage />
+        {walletAddress ? <ChatPage /> : <p>Please connect your wallet to access the chat.</p>}
       </section>
       <Footer />
     </>
@@ -44,4 +44,3 @@ function App() {
 }
 
 export default App;
-
